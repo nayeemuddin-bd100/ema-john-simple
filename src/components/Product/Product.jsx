@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Product.css';
 
 function Product(props) {
+  const showAddtoCart = props.showAddtoCart;
   const handleAddProduct = props.handleAddProduct;
-  const { name, seller, price, stock, img } = props.product;
+  const { name, seller, price, stock, img, key } = props.product;
 
   return (
     <div className="product" >
@@ -11,7 +13,9 @@ function Product(props) {
         <img src={img}></img>
       </div>
       <div className="product-detail">
-        <h4 className="product-name">{name} </h4>
+        <h4 className="product-name">
+          <Link to={`/product/${key}`}> {name} </Link>
+        </h4>
         <br />
         <p>by: {seller}</p>
 
@@ -21,12 +25,12 @@ function Product(props) {
         <p>
           <small>only {stock} left in stock - order soon </small>
         </p>
-        <button
+        {showAddtoCart && <button
           onClick={() => handleAddProduct(props.product)}
           className="main-btn"
         >
           add to cart
-        </button>
+        </button>}
       </div>
     </div>
   );
