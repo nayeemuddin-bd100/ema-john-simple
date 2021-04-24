@@ -173,10 +173,9 @@ const updateUserName = (name) => {
           onClick={emailSignIn}
           style={btnStyles}
         >
-         Sign In With Google
+          Sign In With Google
         </button>
-        )}
-     
+      )}
 
       {/***Login and logout with Facebook******/}
       {info.signIn ? (
@@ -193,7 +192,7 @@ const updateUserName = (name) => {
           onClick={fbLogin}
           style={btnStyles}
         >
-        Sign In With Facebook
+          Sign In With Facebook
         </button>
       )}
 
@@ -213,6 +212,15 @@ const updateUserName = (name) => {
 
       {/* Sign Up with form  */}
       <h2 className="lead">Our Own Authentication</h2>
+
+      <div style={{ border: "1px solid gray",width:'300px',margin:'0 auto',borderRadius:'10px' }}>
+       
+          <small>Test Email: test123@gmail.com</small>{" "}
+        
+        
+          <small>Password: test123</small>{" "}
+       
+      </div>
 
       {info.error && <p style={{ color: "red" }}>{info.error}</p>}
       {info.success && (
