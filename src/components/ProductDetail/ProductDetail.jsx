@@ -11,8 +11,6 @@ function ProductDetail() {
         return prd.key === productKey;
         
     })
-    
-    
     return (
         <div>
             <Product showAddtoCart={false} product={filterData} />

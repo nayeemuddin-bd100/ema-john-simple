@@ -143,7 +143,7 @@ const updateUserName = (name) => {
       newUserInfo[e.target.name] = e.target.value;
       setInfo(newUserInfo);
 
-      // eitah ke short cut e evaabe o likhaa jai...
+      // It can refactor this way too!
       // setInfo({[e.target.name]: e.target.value});
     }
   };
