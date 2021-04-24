@@ -26,6 +26,7 @@ export const handleEmailSignIn = () => {
       return sighInUser;
     })
     .catch((error) => {
+      
       // var errorCode = error.code;
       // var errorMessage = error.message;
       // The email of the user's account used.

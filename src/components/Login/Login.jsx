@@ -104,7 +104,7 @@ function Login() {
           let newUserInfo = { ...info };
           newUserInfo.error = error.message;
           newUserInfo.success = false;
-          setInfo(newUserInfo);
+          return setInfo(newUserInfo);
         });
     }
   };
@@ -215,9 +215,7 @@ const updateUserName = (name) => {
 
       <div style={{ border: "1px solid gray",width:'300px',margin:'0 auto',borderRadius:'10px' }}>
        
-          <small>Test Email: test123@gmail.com</small>{" "}
-        
-        
+          <small>Test Email: test123@gmail.com</small>
           <small>Password: test123</small>{" "}
        
       </div>
