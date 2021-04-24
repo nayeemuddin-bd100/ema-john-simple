@@ -13,7 +13,7 @@ function Product(props) {
         <img src={img}></img>
       </div>
       <div className="product-detail">
-        <h4 className="product-name">
+        <h4 className="product-name ">
           <Link to={`/product/${key}`}> {name} </Link>
         </h4>
         <br />
@@ -27,9 +27,9 @@ function Product(props) {
         </p>
         {showAddtoCart && <button
           onClick={() => handleAddProduct(props.product)}
-          className="main-btn"
+          className='btn btn-warning'
         >
-          add to cart
+          Add to cart
         </button>}
       </div>
     </div>

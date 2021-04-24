@@ -1,8 +1,14 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 
 function Cart(props) {
+  
+ 
+
   const cart = props.cart;
+  const showReviewBtn = props.showReviewBtn;
+
 
   const totalProductPrice = cart.reduce((sum, item) => sum + item.price, 0);
   const shippingCost = cart.reduce((sum, item) => sum + item.shipping, 0);
@@ -20,14 +26,21 @@ function Cart(props) {
       <p>Shipping Cost : {formatNumber(shippingCost)}</p>
       <p>Total Product Price : {formatNumber(totalProductPrice)}</p>
       <p>
-        <small>Tax + VAT : {formatNumber(tax)}</small>{" "}
+        <small>Tax + VAT : {formatNumber(tax)}</small>
       </p>
       <h3>Grand Total: {formatNumber(grandTotal)}</h3>
       <br />
 
-      <button className="main-btn">
-        <Link to="/review">Review Order</Link>
-      </button>
+      {showReviewBtn && (
+        <button
+          className=" btn btn-warning"
+          style={{ border: "1px solid black" }}
+        >
+          <Link to="/review" style={{ textDecoration: "none" }}>
+            Review Order
+          </Link>
+        </button>
+      )}
     </div>
   );
 }
